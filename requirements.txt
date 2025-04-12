@@ -1,3 +1,5 @@
 fastapi==0.95.1
 uvicorn==0.23.0
 selenium==4.6.0
+selenium==4.7.0
+webdriver_manager==3.8.2
