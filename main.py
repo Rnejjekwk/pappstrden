@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time, json
 from webdriver_manager.chrome import ChromeDriverManager
+import os
 
 app = FastAPI()
 
