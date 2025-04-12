@@ -1,13 +1,15 @@
+import os
 from fastapi import FastAPI
-import json
 
 app = FastAPI()
 
 @app.get("/")
-def read_root():
+async def root():
     return {"message": "Hello, World!"}
 
-@app.get("/get-m3u8")
-def get_m3u8():
-    # Simulated m3u8 stream URL (replace with your logic)
-    return {"m3u8_url": "https://example.com/stream.m3u8"}
+# When running on Render, it automatically sets the PORT environment variable.
+# FastAPI will bind to this port.
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))  # Default to 8000 if no port is set
+    uvicorn.run(app, host="0.0.0.0", port=port)
